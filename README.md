@@ -16,8 +16,8 @@
 | COMMAND           | DESCRIPTION                                                                                                                                       |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | --cpus-per-task=1 | Parts of Monocle are limited to 1 CPU. You can run faster at the expense of reproducibility because it will randomly subsample if you use >1 CPU. |
-| --mem=600g        | 500,000 cells requires ~600 GB of RAM to run                                                                                                      |
-| --time=24:00:00   | Time and memory scales with the number of principal components used as well                                                                       |
+| --mem=600g        | As a rough estimate: ~500,000 cells requires ~600 GB of RAM to run on Biowulf                                                                     |
+| --time=24:00:00   | Time and memory scales with the number of principal components (PCs) used as well (default = 50 PCs)                                              |
 
 **VARIABLES:**
 
@@ -44,10 +44,15 @@
 1) Fill in the sbatch parameters that you think are reasonable for the size of your dataset
 2) Fill in the variables in the `monocle2-argparse-sbatch.sh` script file with the paths and variables you want to test with your data
 3) Open a terminal and navigate to where you've stored the `monocle2-argparse-sbatch.sh` script file
-4) Run using:
+4) Run using this command:
 
 ```
 sbatch monocle2-argparse-sbatch.sh
 ```
 
-5) The `/OUTPUTS` folder will have:
+5) The `/OUTPUTS` folder will contain:
+
+- cds.rds           --> Monocle's cell dataset (CDS) file format saved as an R object
+- cell_metadata.tsv --> One of the files needed to create the CDS, but exported after Monocle's processing
+- log.txt           --> Keeps track of important variables (user-provided but also calculated ones)
+- plots.png         --> The plots created by Monocle about your dataset

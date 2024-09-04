@@ -1,5 +1,7 @@
 # FILES TO IGNORE
 *.rds
+Rplots.pdf
+slurm-*.out
 
 # WHOLE FOLDERS TO IGNORE
 /INPUTS

@@ -581,7 +581,7 @@ sink(my_log_file)
 # JOB INFO:
 script_name <- deparse(substitute(sys.call(-1)))
 cat("JOB INFO: \n")
-cat("current_datetime  = ", current_date, "_", current_time, " \n")
+cat(paste0()"current_datetime  = ", current_date, "_", current_time, " \n"))
 cat("script_name       = ", script_name, " \n")
 
 # ARGPARSE USER INPUTS
