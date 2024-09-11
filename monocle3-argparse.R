@@ -581,7 +581,7 @@ sink(my_log_file)
 # JOB INFO:
 script_name <- deparse(substitute(sys.call(-1)))
 cat("JOB INFO: \n")
-cat(paste0()"current_datetime  = ", current_date, "_", current_time, " \n"))
+cat(paste0("current_datetime  = ", current_date, "_", current_time, " \n"))
 cat("script_name       = ", script_name, " \n")
 
 # ARGPARSE USER INPUTS
@@ -591,7 +591,7 @@ print(args)
 # VARIABLES CALCULATED IN SCRIPT
 cat('\nVARIABLES CALCULATED IN SCRIPT: \n')
 cat('95% of PCs  = \n', num_dim, ' PCs used', '\n')
-cat('Pseudotime orded by minimum', column_of_interest, '= \n', min(cell_metadata[[column_of_interest]]), '\n')
+cat('Pseudotime ordered by minimum', column_of_interest, '= \n', min(cell_metadata[[column_of_interest]]), '\n')
 
 # FINAL OUTPUT FOLDER PATH
 cat('\nOUTPUTS SAVED TO: \n', output_path, '\n')
